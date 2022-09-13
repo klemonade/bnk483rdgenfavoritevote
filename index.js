@@ -1,24 +1,28 @@
 const puppeteer = require("puppeteer");
 const BigNumber = require("bignumber.js");
 const member = [
-    "Earn",
-    "Earth",
-    "Eve",
-    "Fame",
-    "Grace",
-    "Hoop",
-    "Jaokhem",
-    "Kaofrang",
-    "Mean",
-    "Monet",
-    "Paeyah",
-    "Pampam",
-    "Pancake",
-    "Peak",
+    "Angel",
+    "Aom",
+    "Champoo",
+    "Fahsai",
+    "Fortune",
+    "Jayda",
+    "Jjae",
+    "Kaiwan",
+    "Kaning",
+    "Kyla",
+    "Latin",
+    "Marmink",
+    "Meen",
+    "Mei",
+    "Milk",
+    "Nena",
+    "Nenie",
+    "Parima",
     "Pim",
-    "Popper",
-    "Yayee",
-    "Yoghurt",
+    "Ping",
+    "Punch",
+    "Sita"
 ];
 
 function getVote(index) {
@@ -67,7 +71,7 @@ function printVote(voteResult) {
     }
 }
 
-const delayDuration = 60000 * 10; // 10 minutes refresh rate
+const delayDuration = 60000 * 0.5; // 10 minutes refresh rate
 const fractor = new BigNumber("1000000000000000000");
 let totalVoteInc = new BigNumber(0);
 let previousTotalVote = new BigNumber(0);
@@ -87,7 +91,7 @@ async function getData() {
     const page = await browser.newPage();
     var userAgent = require("user-agents");
     await page.setUserAgent(userAgent.toString());
-    await page.goto("https://scan.tokenx.finance/address/0x1c7157A8043b04258516858Ad9bD9952E0D5ec8B/read-contract");
+    await page.goto("https://scan.tokenx.finance/address/0x429B686F70332fd0A3F8d261A11B4B42d6D036Df/read-contract");
 
     // clear Vote before push
     lastVote.length = 0;
