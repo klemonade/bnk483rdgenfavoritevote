@@ -22,7 +22,7 @@ const member = [
     "Pim",
     "Ping",
     "Punch",
-    "Sita"
+    "Sita",
 ];
 
 function getVote(index) {
