@@ -1,29 +1,8 @@
 const puppeteer = require("puppeteer");
 const BigNumber = require("bignumber.js");
-const member = [
-    "Angel",
-    "Aom",
-    "Champoo",
-    "Fahsai",
-    "Fortune",
-    "Jayda",
-    "Jjae",
-    "Kaiwan",
-    "Kaning",
-    "Kyla",
-    "Latin",
-    "Marmink",
-    "Meen",
-    "Mei",
-    "Milk",
-    "Nena",
-    "Nenie",
-    "Parima",
-    "Pim",
-    "Ping",
-    "Punch",
-    "Sita",
-];
+const member = ["BNK48 Team NV", "BNK48 Team BIII", "BNK48 Team Trainee", "CGM48 Team C", "CGM48 Team Trainee"];
+
+const URL = "https://scan.tokenx.finance/address/0x5E1d8fDEFb25460E9d6A276e2548FA2F74dfbf3B/read-contract";
 
 function getVote(index) {
     return `body > div.layout-container > main > section > div.card > div.card-body > div:nth-child(11) > span > div:nth-child(${
@@ -91,7 +70,7 @@ async function getData() {
     const page = await browser.newPage();
     var userAgent = require("user-agents");
     await page.setUserAgent(userAgent.toString());
-    await page.goto("https://scan.tokenx.finance/address/0x429B686F70332fd0A3F8d261A11B4B42d6D036Df/read-contract");
+    await page.goto(URL);
 
     // clear Vote before push
     lastVote.length = 0;
